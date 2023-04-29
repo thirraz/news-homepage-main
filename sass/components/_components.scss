@@ -1,0 +1,14 @@
+.container {
+    font-size: 1.6rem;
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    grid-template-rows: 8rem [main-start] repeat(3, minmax(12rem, 1fr)) [main-end top-news-start] min-content [top-news-end];
+    gap: 2.5rem;
+
+    max-width: 90%;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: 1fr;
+    }
+}

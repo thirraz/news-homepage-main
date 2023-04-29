@@ -1,0 +1,324 @@
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 50em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  overflow-x: hidden;
+}
+body > * {
+  font-family: "Inter", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-size: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  grid-template-rows: 8rem [main-start] repeat(3, minmax(12rem, 1fr)) [main-end top-news-start] min-content [top-news-end];
+  gap: 2.5rem;
+  max-width: 90%;
+}
+@media only screen and (max-width: 50em) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.menu {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* &__nav {
+      width: 70%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @media only screen and (min-width: $bp-medium) {
+          display: none;
+      }
+
+      &__links {
+          font-size: 3rem;
+      }
+  } */
+}
+@media only screen and (max-width: 50em) {
+  .menu {
+    grid-row: 1;
+  }
+}
+.menu__logo {
+  width: 6rem;
+  height: 4rem;
+}
+.menu__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 35%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in;
+}
+.menu__links {
+  display: flex;
+  font-size: 1.5rem;
+  list-style: none;
+}
+@media only screen and (max-width: 50em) {
+  .menu__links {
+    padding-left: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: crimson;
+    width: 65%;
+    min-height: 100vh;
+    z-index: 30;
+    flex-direction: column;
+    font-size: 3.2rem;
+    justify-content: center;
+    transition: transform 0.3s ease-in;
+    transform: translateX(100%);
+  }
+}
+.menu__link {
+  color: hsl(236, 13%, 42%);
+}
+.menu__link:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+@media only screen and (max-width: 50em) {
+  .menu__link {
+    color: #000;
+  }
+  .menu__link:not(:last-child) {
+    margin-bottom: 2.5rem;
+    width: 65%;
+  }
+}
+.menu__link:not(:last-child) {
+  margin-right: 5rem;
+}
+.menu__icon {
+  cursor: pointer;
+}
+.menu__icon__close {
+  width: 4rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+@media only screen and (min-width: 50em) {
+  .menu__icon__close {
+    display: none;
+  }
+}
+@media only screen and (min-width: 50em) {
+  .menu__icon {
+    display: none;
+  }
+}
+
+.main__news {
+  grid-column: 1/3;
+  grid-row: 2/span 3;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  hyphens: auto;
+}
+.main__news img {
+  grid-column: 1/3;
+  grid-row: 2;
+  max-width: 100%;
+  margin-bottom: 4rem;
+}
+@media only screen and (max-width: 50em) {
+  .main__news img {
+    margin-bottom: 0;
+  }
+}
+.main__news__heading {
+  font-size: 6rem;
+  grid-column: 1/2;
+  grid-row: span 2;
+  color: hsl(240, 100%, 5%);
+}
+@media only screen and (max-width: 50em) {
+  .main__news__heading {
+    grid-column: 1/-1;
+    margin-top: 1.5rem;
+  }
+}
+.main__news__paragraph {
+  opacity: 0.8;
+  hyphens: auto;
+}
+@media only screen and (max-width: 50em) {
+  .main__news__paragraph {
+    font-size: 1.9rem;
+    grid-column: 1/-1;
+    margin: 1rem 0 2.5rem;
+  }
+}
+.main__news__btn {
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: hsl(5, 85%, 63%);
+  width: max-content;
+  height: min-content;
+  padding: 2rem 4rem;
+  color: #fff;
+  letter-spacing: 0.3rem;
+}
+.main__news__btn:hover {
+  background: hsl(240, 100%, 5%);
+}
+@media only screen and (max-width: 50em) {
+  .main__news__btn {
+    margin: 2rem 0 8rem;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .main__news {
+    grid-row: 2;
+  }
+}
+
+.more__news {
+  grid-column: 3;
+  grid-row: span 3;
+  background: hsl(240, 100%, 5%);
+  color: white;
+  padding: 2.3rem;
+  display: grid;
+  grid-template-rows: min-content repeat(3, minmax(min-content, 1fr));
+}
+.more__news__recents {
+  color: hsl(35, 77%, 62%);
+  font-size: 3rem;
+}
+.more__news__text {
+  margin-top: 3rem;
+}
+.more__news__text h4 {
+  font-size: 2.2rem;
+}
+.more__news__text h4:hover {
+  color: hsl(35, 77%, 62%);
+  cursor: pointer;
+}
+.more__news__text p {
+  opacity: 0.8;
+  margin: 1rem 0 3rem;
+  hyphens: auto;
+}
+.more__news__text:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+@media only screen and (max-width: 50em) {
+  .more__news {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 2.1rem;
+  }
+  .more__news h4 {
+    font-size: 2.8rem;
+  }
+}
+
+.top__news {
+  grid-row: 5;
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  column-gap: 2.5rem;
+  hyphens: auto;
+  margin-top: 3rem;
+}
+.top__news__cover {
+  height: 13rem;
+  width: 9rem;
+  object-fit: cover;
+}
+@media only screen and (max-width: 50em) {
+  .top__news__cover {
+    height: 14rem;
+  }
+}
+.top__news--1, .top__news--2, .top__news--3 {
+  display: flex;
+}
+@media only screen and (max-width: 50em) {
+  .top__news--1, .top__news--2, .top__news--3 {
+    height: min-content;
+  }
+}
+.top__news__numbering {
+  color: hsl(233, 8%, 79%);
+  font-size: 3.2rem;
+}
+@media only screen and (max-width: 50em) {
+  .top__news__numbering {
+    font-size: 4rem;
+  }
+}
+.top__news__text {
+  margin-left: 1.5rem;
+}
+.top__news__text h4 {
+  margin: 1rem 0;
+}
+@media only screen and (max-width: 50em) {
+  .top__news__text h4 {
+    font-size: 2.5rem;
+  }
+}
+.top__news__text h4:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+.top__news__text p {
+  color: hsl(233, 8%, 79%);
+  hyphens: auto;
+}
+@media only screen and (max-width: 50em) {
+  .top__news__text p {
+    font-size: 2.1rem;
+  }
+}
+@media only screen and (max-width: 50em) {
+  .top__news {
+    grid-column: 1;
+    grid-row: 4;
+    grid-template-rows: repeat(3, minmax(min-content, 1fr));
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
