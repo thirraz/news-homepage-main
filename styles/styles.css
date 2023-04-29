@@ -201,6 +201,7 @@ body > * {
   padding: 2rem 4rem;
   color: #fff;
   letter-spacing: 0.3rem;
+  align-self: end;
 }
 .main__news__btn:hover {
   background: hsl(240, 100%, 5%);
