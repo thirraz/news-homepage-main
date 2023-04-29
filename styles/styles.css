@@ -99,12 +99,12 @@ body > * {
     position: absolute;
     top: 0;
     right: 0;
-    background: crimson;
+    background: #fff;
     width: 65%;
     min-height: 100vh;
     z-index: 30;
     flex-direction: column;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     justify-content: center;
     transition: transform 0.3s ease-in;
     transform: translateX(100%);
@@ -136,7 +136,7 @@ body > * {
   width: 4rem;
   position: absolute;
   top: 5%;
-  right: 5%;
+  right: 13.5%;
   cursor: pointer;
 }
 @media only screen and (min-width: 50em) {
