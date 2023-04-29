@@ -15,14 +15,18 @@
     }
 
     &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 30;
-        width: 35%;
-        min-height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease-in;
+        display: none;
+
+        @media only screen and (max-width: $bp-medium) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 30;
+            width: 35%;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in;
+        }
     }
 
     &__links {
